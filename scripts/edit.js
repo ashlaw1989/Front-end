@@ -19,14 +19,14 @@ addEventListener("DOMContentLoaded", async function() {
 
 async function updateSong() {
     // create song obj fron form fields
-    const songID = document.querySelector("#songId").value
+    const songID = document.querySelector("#songID").value
     const song = {
-        _id: document.querySelector("#songId").value,
+        _id: document.querySelector("#songID").value,
         title: document.querySelector("#title").value,
         artist: document.querySelector("#artist").value,
         releaseDate: document.querySelector("#released").value,
         popularity: document.querySelector("#popularity").value,
-        genre: document.querySelector("#dongId").value ?
+        genre: document.querySelector("#genre").value ?
             document.querySelector("#genre").value.split(",") : []
             
     }
@@ -38,5 +38,12 @@ async function updateSong() {
         body: JSON.stringify(song)
 
     })
+
+    if (response.ok) {
+        alert("Updated Song")
+    }
+    else {
+        document.querySelector("#error").innerHTML = "Cannot update song"
+    }
 
 }
