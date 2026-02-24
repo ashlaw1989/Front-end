@@ -13,7 +13,7 @@ async function addSong() {
         genre: document.querySelector("#genre").value ? document.querySelector("#genre").value.split(",") : []
     }
 
-    const response = await fetch("https://github.com/ashlaw1989/Back-end.git", {
+    const response = await fetch("http://localhost:3000/api/songs", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json"

@@ -3,7 +3,7 @@ addEventListener("DOMContentLoaded", async function() {
     const urlparam = new URLSearchParams(window.location.search)
     const songID = urlparam.get("id")
 
-    const response = await fetch("https://github.com/ashlaw1989/Back-end.git" + songID)
+    const response = await fetch("http://localhost:3000/api/songs/" + songID)
     if(response.ok) {
         let song = await response.json()
         document.querySelector("#songID").value = song._id
